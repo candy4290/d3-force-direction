@@ -1,0 +1,612 @@
+{
+    "node": [
+        {
+            "id": 3065695,
+            "name": "荆州路长阳路南约5米（西）HG",
+            "nodeType": "设备",
+            "nodeTypeId": "7",
+            "detail": [
+                {
+                    "key": "设备编号",
+                    "value": "31011020001321009007"
+                },
+                {
+                    "key": "设备名称",
+                    "value": "荆州路长阳路南约5米（西）HG"
+                },
+                {
+                    "key": "摄像机功能类型",
+                    "value": "2-人脸识别"
+                },
+                {
+                    "key": "摄像机类型",
+                    "value": "3-固定枪机"
+                },
+                {
+                    "key": "设备坐标",
+                    "value": "121.51025800000000000000,31.26106600000000000000"
+                },
+                {
+                    "key": "行政区划",
+                    "value": "310110-杨浦区"
+                }
+            ]
+        },
+        {
+            "id": 3065694,
+            "name": "荆州路长阳路北约5米（东）HG",
+            "nodeType": "设备",
+            "nodeTypeId": "7",
+            "detail": [
+                {
+                    "key": "设备编号",
+                    "value": "31011020001321009006"
+                },
+                {
+                    "key": "设备名称",
+                    "value": "荆州路长阳路北约5米（东）HG"
+                },
+                {
+                    "key": "摄像机功能类型",
+                    "value": "2-人脸识别"
+                },
+                {
+                    "key": "摄像机类型",
+                    "value": "3-固定枪机"
+                },
+                {
+                    "key": "设备坐标",
+                    "value": "121.51001885185,31.261474102733"
+                },
+                {
+                    "key": "行政区划",
+                    "value": "310110-杨浦区"
+                }
+            ]
+        },
+        {
+            "id": 3065690,
+            "name": "长阳路荆州路东约22米HG",
+            "nodeType": "设备",
+            "nodeTypeId": "7",
+            "detail": [
+                {
+                    "key": "设备编号",
+                    "value": "31011020001321009002"
+                },
+                {
+                    "key": "设备名称",
+                    "value": "长阳路荆州路东约22米HG"
+                },
+                {
+                    "key": "摄像机功能类型",
+                    "value": "2-人脸识别"
+                },
+                {
+                    "key": "摄像机类型",
+                    "value": "3-固定枪机"
+                },
+                {
+                    "key": "设备坐标",
+                    "value": "121.51043351074,31.261641886795"
+                },
+                {
+                    "key": "行政区划",
+                    "value": "310110-杨浦区"
+                }
+            ]
+        },
+        {
+            "id": 3065767,
+            "name": "怀德路287弄东2门-车HG",
+            "nodeType": "设备",
+            "nodeTypeId": "7",
+            "detail": [
+                {
+                    "key": "设备编号",
+                    "value": "31011020001328008008"
+                },
+                {
+                    "key": "设备名称",
+                    "value": "怀德路287弄东2门-车HG"
+                },
+                {
+                    "key": "摄像机功能类型",
+                    "value": "1-车辆识别"
+                },
+                {
+                    "key": "摄像机类型",
+                    "value": "3-固定枪机"
+                },
+                {
+                    "key": "设备坐标",
+                    "value": "121.523459207,31.256571675099"
+                },
+                {
+                    "key": "行政区划",
+                    "value": "310110-杨浦区"
+                }
+            ]
+        },
+        {
+            "id": 3065693,
+            "name": "荆州路长阳路北约5米（西）HG",
+            "nodeType": "设备",
+            "nodeTypeId": "7",
+            "detail": [
+                {
+                    "key": "设备编号",
+                    "value": "31011020001321009005"
+                },
+                {
+                    "key": "设备名称",
+                    "value": "荆州路长阳路北约5米（西）HG"
+                },
+                {
+                    "key": "摄像机功能类型",
+                    "value": "2-人脸识别"
+                },
+                {
+                    "key": "摄像机类型",
+                    "value": "3-固定枪机"
+                },
+                {
+                    "key": "设备坐标",
+                    "value": "121.50993802976,31.261425126047"
+                },
+                {
+                    "key": "行政区划",
+                    "value": "310110-杨浦区"
+                }
+            ]
+        },
+        {
+            "id": 3065698,
+            "name": "平凉路兰州路西约5米（南）HG",
+            "nodeType": "设备",
+            "nodeTypeId": "7",
+            "detail": [
+                {
+                    "key": "设备编号",
+                    "value": "31011020001321009010"
+                },
+                {
+                    "key": "设备名称",
+                    "value": "平凉路兰州路西约5米（南）HG"
+                },
+                {
+                    "key": "摄像机功能类型",
+                    "value": "2-人脸识别"
+                },
+                {
+                    "key": "摄像机类型",
+                    "value": "3-固定枪机"
+                },
+                {
+                    "key": "设备坐标",
+                    "value": "121.52714344329,31.262130312555"
+                },
+                {
+                    "key": "行政区划",
+                    "value": "310110-杨浦区"
+                }
+            ]
+        },
+        {
+            "id": 3065697,
+            "name": "平凉路兰州路西约5米（北）HG",
+            "nodeType": "设备",
+            "nodeTypeId": "7",
+            "detail": [
+                {
+                    "key": "设备编号",
+                    "value": "31011020001321009009"
+                },
+                {
+                    "key": "设备名称",
+                    "value": "平凉路兰州路西约5米（北）HG"
+                },
+                {
+                    "key": "摄像机功能类型",
+                    "value": "2-人脸识别"
+                },
+                {
+                    "key": "摄像机类型",
+                    "value": "3-固定枪机"
+                },
+                {
+                    "key": "设备坐标",
+                    "value": "121.5268748592,31.262281450563"
+                },
+                {
+                    "key": "行政区划",
+                    "value": "310110-杨浦区"
+                }
+            ]
+        },
+        {
+            "id": 3065692,
+            "name": "长阳路荆州路西约22米HG",
+            "nodeType": "设备",
+            "nodeTypeId": "7",
+            "detail": [
+                {
+                    "key": "设备编号",
+                    "value": "31011020001321009004"
+                },
+                {
+                    "key": "设备名称",
+                    "value": "长阳路荆州路西约22米HG"
+                },
+                {
+                    "key": "摄像机功能类型",
+                    "value": "2-人脸识别"
+                },
+                {
+                    "key": "摄像机类型",
+                    "value": "3-固定枪机"
+                },
+                {
+                    "key": "设备坐标",
+                    "value": "121.50996672302,31.261000948652"
+                },
+                {
+                    "key": "行政区划",
+                    "value": "310110-杨浦区"
+                }
+            ]
+        },
+        {
+            "id": 3065691,
+            "name": "长阳路荆州路西约5米HG",
+            "nodeType": "设备",
+            "nodeTypeId": "7",
+            "detail": [
+                {
+                    "key": "设备编号",
+                    "value": "31011020001321009003"
+                },
+                {
+                    "key": "设备名称",
+                    "value": "长阳路荆州路西约5米HG"
+                },
+                {
+                    "key": "摄像机功能类型",
+                    "value": "2-人脸识别"
+                },
+                {
+                    "key": "摄像机类型",
+                    "value": "3-固定枪机"
+                },
+                {
+                    "key": "设备坐标",
+                    "value": "121.50993761012,31.261277662258"
+                },
+                {
+                    "key": "行政区划",
+                    "value": "310110-杨浦区"
+                }
+            ]
+        },
+        {
+            "id": 3065696,
+            "name": "荆州路长阳路南约5米（东）HG",
+            "nodeType": "设备",
+            "nodeTypeId": "7",
+            "detail": [
+                {
+                    "key": "设备编号",
+                    "value": "31011020001321009008"
+                },
+                {
+                    "key": "设备名称",
+                    "value": "荆州路长阳路南约5米（东）HG"
+                },
+                {
+                    "key": "摄像机功能类型",
+                    "value": "2-人脸识别"
+                },
+                {
+                    "key": "摄像机类型",
+                    "value": "3-固定枪机"
+                },
+                {
+                    "key": "设备坐标",
+                    "value": "121.51031400000000000000,31.26112100000000000000"
+                },
+                {
+                    "key": "行政区划",
+                    "value": "310110-杨浦区"
+                }
+            ]
+        },
+        {
+            "id": 3065702,
+            "name": "翡丽云邸南侧-车HG",
+            "nodeType": "设备",
+            "nodeTypeId": "7",
+            "detail": [
+                {
+                    "key": "设备编号",
+                    "value": "31011020001328001002"
+                },
+                {
+                    "key": "设备名称",
+                    "value": "翡丽云邸南侧-车HG"
+                },
+                {
+                    "key": "摄像机功能类型",
+                    "value": "1-车辆识别"
+                },
+                {
+                    "key": "摄像机类型",
+                    "value": "3-固定枪机"
+                },
+                {
+                    "key": "设备坐标",
+                    "value": "121.51520436159,31.259744882439"
+                },
+                {
+                    "key": "行政区划",
+                    "value": "310110-杨浦区"
+                }
+            ]
+        },
+        {
+            "id": 3065667,
+            "name": "平凉路/许昌路西HG",
+            "nodeType": "设备",
+            "nodeTypeId": "7",
+            "detail": [
+                {
+                    "key": "设备编号",
+                    "value": "31011020001321008006"
+                },
+                {
+                    "key": "设备名称",
+                    "value": "平凉路/许昌路西HG"
+                },
+                {
+                    "key": "摄像机功能类型",
+                    "value": "1-车辆识别"
+                },
+                {
+                    "key": "摄像机类型",
+                    "value": "3-固定枪机"
+                },
+                {
+                    "key": "设备坐标",
+                    "value": "11,121.52399100000000000000"
+                },
+                {
+                    "key": "行政区划",
+                    "value": "310110-杨浦区"
+                }
+            ]
+        },
+        {
+            "id": 3065669,
+            "name": "长阳路荆州路东约5米HG",
+            "nodeType": "设备",
+            "nodeTypeId": "7",
+            "detail": [
+                {
+                    "key": "设备编号",
+                    "value": "31011020001321009001"
+                },
+                {
+                    "key": "设备名称",
+                    "value": "长阳路荆州路东约5米HG"
+                },
+                {
+                    "key": "摄像机功能类型",
+                    "value": "2-人脸识别"
+                },
+                {
+                    "key": "摄像机类型",
+                    "value": "3-固定枪机"
+                },
+                {
+                    "key": "设备坐标",
+                    "value": "121.51021051994,31.261478088018"
+                },
+                {
+                    "key": "行政区划",
+                    "value": "310110-杨浦区"
+                }
+            ]
+        },
+        {
+            "id": 3065668,
+            "name": "平凉路/许昌路北HG",
+            "nodeType": "设备",
+            "nodeTypeId": "7",
+            "detail": [
+                {
+                    "key": "设备编号",
+                    "value": "31011020001321008007"
+                },
+                {
+                    "key": "设备名称",
+                    "value": "平凉路/许昌路北HG"
+                },
+                {
+                    "key": "摄像机功能类型",
+                    "value": "1-车辆识别"
+                },
+                {
+                    "key": "摄像机类型",
+                    "value": "3-固定枪机"
+                },
+                {
+                    "key": "设备坐标",
+                    "value": "11,121.52401300000000000000"
+                },
+                {
+                    "key": "行政区划",
+                    "value": "310110-杨浦区"
+                }
+            ]
+        },
+        {
+            "id": 3065664,
+            "name": "平凉路/通北路北HG",
+            "nodeType": "设备",
+            "nodeTypeId": "7",
+            "detail": [
+                {
+                    "key": "设备编号",
+                    "value": "31011020001321008003"
+                },
+                {
+                    "key": "设备名称",
+                    "value": "平凉路/通北路北HG"
+                },
+                {
+                    "key": "摄像机功能类型",
+                    "value": "1-车辆识别"
+                },
+                {
+                    "key": "摄像机类型",
+                    "value": "3-固定枪机"
+                },
+                {
+                    "key": "设备坐标",
+                    "value": "11,121.52152300000000000000"
+                },
+                {
+                    "key": "行政区划",
+                    "value": "310110-杨浦区"
+                }
+            ]
+        }
+    ],
+    "rel": [
+        {
+            "id": 8228725,
+            "version": null,
+            "type": "Downstream",
+            "startNode": 3065702,
+            "endNode": 3065697,
+            "primaryIdName": null,
+            "propertyList": []
+        },
+        {
+            "id": 8228724,
+            "version": null,
+            "type": "Downstream",
+            "startNode": 3065702,
+            "endNode": 3065696,
+            "primaryIdName": null,
+            "propertyList": []
+        },
+        {
+            "id": 8228726,
+            "version": null,
+            "type": "Downstream",
+            "startNode": 3065702,
+            "endNode": 3065698,
+            "primaryIdName": null,
+            "propertyList": []
+        },
+        {
+            "id": 8228721,
+            "version": null,
+            "type": "Downstream",
+            "startNode": 3065702,
+            "endNode": 3065693,
+            "primaryIdName": null,
+            "propertyList": []
+        },
+        {
+            "id": 8228689,
+            "version": null,
+            "type": "Downstream",
+            "startNode": 3065664,
+            "endNode": 3065702,
+            "primaryIdName": null,
+            "propertyList": []
+        },
+        {
+            "id": 8228720,
+            "version": null,
+            "type": "Downstream",
+            "startNode": 3065702,
+            "endNode": 3065692,
+            "primaryIdName": null,
+            "propertyList": []
+        },
+        {
+            "id": 8228723,
+            "version": null,
+            "type": "Downstream",
+            "startNode": 3065702,
+            "endNode": 3065695,
+            "primaryIdName": null,
+            "propertyList": []
+        },
+        {
+            "id": 8228722,
+            "version": null,
+            "type": "Downstream",
+            "startNode": 3065702,
+            "endNode": 3065694,
+            "primaryIdName": null,
+            "propertyList": []
+        },
+        {
+            "id": 8228717,
+            "version": null,
+            "type": "Downstream",
+            "startNode": 3065702,
+            "endNode": 3065669,
+            "primaryIdName": null,
+            "propertyList": []
+        },
+        {
+            "id": 8228716,
+            "version": null,
+            "type": "Downstream",
+            "startNode": 3065702,
+            "endNode": 3065668,
+            "primaryIdName": null,
+            "propertyList": []
+        },
+        {
+            "id": 8228719,
+            "version": null,
+            "type": "Downstream",
+            "startNode": 3065702,
+            "endNode": 3065691,
+            "primaryIdName": null,
+            "propertyList": []
+        },
+        {
+            "id": 8228718,
+            "version": null,
+            "type": "Downstream",
+            "startNode": 3065702,
+            "endNode": 3065690,
+            "primaryIdName": null,
+            "propertyList": []
+        },
+        {
+            "id": 8228715,
+            "version": null,
+            "type": "Downstream",
+            "startNode": 3065702,
+            "endNode": 3065667,
+            "primaryIdName": null,
+            "propertyList": []
+        },
+        {
+            "id": 8228742,
+            "version": null,
+            "type": "Downstream",
+            "startNode": 3065702,
+            "endNode": 3065767,
+            "primaryIdName": null,
+            "propertyList": []
+        }
+    ]
+}

@@ -1,0 +1,374 @@
+{
+  "node": [
+    {
+      "id": 1,
+      "name": "沪AB1234",
+      "nodeType": "车辆",
+      "nodeTypeId": "1",
+      "detail": [
+        { "key": "号牌号码", "value": "沪AB1234", "isNumber": true},
+        { "key": "号牌种类", "value": "小型车", "isNumber": true},
+        { "key": "号牌颜色", "value": "蓝色", "isNumber": true},
+        { "key": "车身颜色", "value": "白色", "isNumber": true},
+        { "key": "车辆品牌", "value": "比亚迪", "isNumber": true},
+        { "key": "车辆类型", "value": "小型车", "isNumber": true},
+        { "key": "使用性质", "value": "个人", "isNumber": true},
+        { "key": "车辆状态", "value": "正常", "isNumber": true}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "2020-10-01 闯红灯",
+      "label": "2020-10-01 闯红灯",
+      "group": 2,
+      "nodeType": "违法",
+      "runtime": 130,
+      "detail": [
+        { "key": "违法时间", "value": "2017-09-18 10:32:00", "isNum": true },
+        { "key": "违法类型", "value": "闯红灯", "isNum": false },
+        { "key": "行政区划", "value": "闵行区", "isNum": false },
+        {
+          "key": "违法地址",
+          "value": "上海市徐汇区钦州北路西南路口",
+          "isNum": false
+        },
+        {
+          "key": "处理部门",
+          "value": "上海市公安局交通警察总队高架道路支队四大队",
+          "isNum": false
+        },
+        { "key": "处理时间", "value": "2017-09-18 10:32:00", "isNum": true }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "2020-10-01 未系安全带",
+      "label": "2020-10-01 未系安全带",
+      "group": 2,
+      "nodeType": "违法",
+      "runtime": 130,
+      "detail": [
+        { "key": "违法时间", "value": "2017-09-18 10:32:00", "isNum": true },
+        { "key": "违法类型", "value": "闯红灯", "isNum": false },
+        { "key": "行政区划", "value": "闵行区", "isNum": false },
+        {
+          "key": "违法地址",
+          "value": "上海市徐汇区钦州北路西南路口",
+          "isNum": false
+        },
+        {
+          "key": "处理部门",
+          "value": "上海市公安局交通警察总队高架道路支队四大队",
+          "isNum": false
+        },
+        { "key": "处理时间", "value": "2017-09-18 10:32:00", "isNum": true }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "张三",
+      "label": "张三",
+      "group": 2,
+      "nodeType": "车主",
+      "runtime": 130,
+      "detail": [
+        { "key": "姓名", "value": "张三", "isNum": false },
+        { "key": "证件类型", "value": "身份证", "isNum": false },
+        { "key": "证件号码", "value": "320982199306011271", "isNum": false },
+        { "key": "车主籍贯", "value": "江苏-盐城", "isNum": false },
+        { "key": "性别", "value": "男", "isNum": false },
+        { "key": "年龄", "value": "18", "isNum": false },
+        { "key": "联系电话", "value": "13641742280", "isNum": false },
+        { "key": "联系地址", "value": "钦州北路", "isNum": false }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "2020-10-01 闯红灯",
+      "label": "2020-10-01 闯红灯",
+      "group": 2,
+      "nodeType": "违法",
+      "runtime": 130,
+      "detail": [
+        { "key": "违法时间", "value": "2017-09-18 10:32:00", "isNum": true },
+        { "key": "违法类型", "value": "闯红灯", "isNum": false },
+        { "key": "行政区划", "value": "闵行区", "isNum": false },
+        {
+          "key": "违法地址",
+          "value": "上海市徐汇区钦州北路西南路口",
+          "isNum": false
+        },
+        {
+          "key": "处理部门",
+          "value": "上海市公安局交通警察总队高架道路支队四大队",
+          "isNum": false
+        },
+        { "key": "处理时间", "value": "2017-09-18 10:32:00", "isNum": true }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "2020-09-01 交通秩序",
+      "label": "2020-09-01 交通秩序",
+      "group": 2,
+      "nodeType": "警情",
+      "runtime": 130,
+      "detail": [
+        { "key": "警情类型", "value": "交通秩序", "isNum": false },
+        { "key": "报警人", "value": "阿翔", "isNum": false },
+        { "key": "联系电话", "value": "13641742288", "isNum": true },
+        { "key": "报警时间", "value": "2017-09-18 10:32:00", "isNum": true },
+        { "key": "所属分局", "value": "闵行分局", "isNum": false },
+        { "key": "简要案情", "value": "简要案情", "isNum": false }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "2020-09-01 伤人事故",
+      "label": "2020-09-01 伤人事故",
+      "group": 2,
+      "nodeType": "事故",
+      "runtime": 130,
+      "detail": [
+        { "key": "事故时间", "value":"2017-09-18 10:32:00", "isNum": true },
+        { "key": "事故类型", "value":"交通肇事", "isNum": false },
+        { "key": "行政区划", "value":"闵行区", "isNum": false },
+        { "key": "事故地点", "value":"虹梅路立交沪闵高架东侧往中环高架内侧", "isNum": false },
+        { "key": "简要案情", "value":"简要案情", "isNum": false }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "2020-09-02 伤人事故",
+      "label": "2020-09-02 伤人事故",
+      "group": 2,
+      "nodeType": "事故",
+      "runtime": 130,
+      "detail": [
+        { "key": "事故时间", "value":"2017-09-18 10:32:00", "isNum": true },
+        { "key": "事故类型", "value":"交通肇事", "isNum": false },
+        { "key": "行政区划", "value":"闵行区", "isNum": false },
+        { "key": "事故地点", "value":"虹梅路立交沪闵高架东侧往中环高架内侧", "isNum": false },
+        { "key": "简要案情", "value":"简要案情", "isNum": false }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "李四",
+      "label": "李四",
+      "group": 3,
+      "nodeType": "车主",
+      "runtime": 100,
+      "detail": [
+        { "key": "姓名", "value": "李四", "isNum": false },
+        { "key": "证件类型", "value": "身份证", "isNum": false },
+        { "key": "证件号码", "value": "320982199306011271", "isNum": false },
+        { "key": "车主籍贯", "value": "江苏-盐城", "isNum": false },
+        { "key": "性别", "value": "男", "isNum": false },
+        { "key": "年龄", "value": "18", "isNum": false },
+        { "key": "联系电话", "value": "13641742280", "isNum": false },
+        { "key": "联系地址", "value": "钦州北路", "isNum": false }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "沪AB0010",
+      "label": "沪AB0010",
+      "group": 3,
+      "nodeType": "车辆",
+      "runtime": 100,
+      "detail": [
+        { "key": "号牌号码", "value": "沪AB0010", "isNumber": true},
+        { "key": "号牌种类", "value": "小型车", "isNumber": true},
+        { "key": "号牌颜色", "value": "蓝色", "isNumber": true},
+        { "key": "车身颜色", "value": "白色", "isNumber": true},
+        { "key": "车辆品牌", "value": "比亚迪", "isNumber": true},
+        { "key": "车辆类型", "value": "小型车", "isNumber": true},
+        { "key": "使用性质", "value": "个人", "isNumber": true},
+        { "key": "车辆状态", "value": "正常", "isNumber": true}
+      ]
+    },
+    {
+      "id": 11,
+      "name": "沪AB0010",
+      "label": "沪AB0010",
+      "group": 3,
+      "nodeType": "车辆",
+      "runtime": 100,
+      "detail": [
+        { "key": "号牌号码", "value": "沪AB0010", "isNumber": true},
+        { "key": "号牌种类", "value": "小型车", "isNumber": true},
+        { "key": "号牌颜色", "value": "蓝色", "isNumber": true},
+        { "key": "车身颜色", "value": "白色", "isNumber": true},
+        { "key": "车辆品牌", "value": "比亚迪", "isNumber": true},
+        { "key": "车辆类型", "value": "小型车", "isNumber": true},
+        { "key": "使用性质", "value": "个人", "isNumber": true},
+        { "key": "车辆状态", "value": "正常", "isNumber": true}
+      ]
+    },
+    {
+      "id": 12,
+      "name": "2020-05-05 交通秩序",
+      "label": "2020-05-05 交通秩序",
+      "group": 4,
+      "nodeType": "警情",
+      "runtime": 60,
+      "detail": [
+        { "key": "警情类型", "value": "交通秩序", "isNum": false },
+        { "key": "报警人", "value": "阿翔", "isNum": false },
+        { "key": "联系电话", "value": "13641742288", "isNum": true },
+        { "key": "报警时间", "value": "2017-09-18 10:32:00", "isNum": true },
+        { "key": "所属分局", "value": "闵行分局", "isNum": false },
+        { "key": "简要案情", "value": "简要案情", "isNum": false }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "张三",
+      "label": "张三",
+      "group": 4,
+      "nodeType": "车主",
+      "runtime": 60,
+      "detail": [
+        { "key": "姓名", "value": "张三", "isNum": false },
+        { "key": "证件类型", "value": "身份证", "isNum": false },
+        { "key": "证件号码", "value": "320982199306011271", "isNum": false },
+        { "key": "车主籍贯", "value": "江苏-盐城", "isNum": false },
+        { "key": "性别", "value": "男", "isNum": false },
+        { "key": "年龄", "value": "18", "isNum": false },
+        { "key": "联系电话", "value": "13641742280", "isNum": false },
+        { "key": "联系地址", "value": "钦州北路", "isNum": false }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "2020-05-05 闯红灯",
+      "label": "2020-05-05 闯红灯",
+      "group": 4,
+      "nodeType": "违法",
+      "runtime": 60,
+      "detail": [
+        { "key": "违法时间", "value": "2017-09-18 10:32:00", "isNum": true },
+        { "key": "违法类型", "value": "闯红灯", "isNum": false },
+        { "key": "行政区划", "value": "闵行区", "isNum": false },
+        {
+          "key": "违法地址",
+          "value": "上海市徐汇区钦州北路西南路口",
+          "isNum": false
+        },
+        {
+          "key": "处理部门",
+          "value": "上海市公安局交通警察总队高架道路支队四大队",
+          "isNum": false
+        },
+        { "key": "处理时间", "value": "2017-09-18 10:32:00", "isNum": true }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "王五",
+      "label": "王五",
+      "group": 5,
+      "nodeType": "车主",
+      "runtime": 40,
+      "detail": [
+        { "key": "姓名", "value": "王五", "isNum": false },
+        { "key": "证件类型", "value": "身份证", "isNum": false },
+        { "key": "证件号码", "value": "320982199306011271", "isNum": false },
+        { "key": "车主籍贯", "value": "江苏-盐城", "isNum": false },
+        { "key": "性别", "value": "男", "isNum": false },
+        { "key": "年龄", "value": "18", "isNum": false },
+        { "key": "联系电话", "value": "13641742280", "isNum": false },
+        { "key": "联系地址", "value": "钦州北路", "isNum": false }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "沪AB0010",
+      "label": "沪AB0010",
+      "group": 6,
+      "nodeType": "车辆",
+      "runtime": 20,
+      "detail": [
+        { "key": "号牌号码", "value": "沪AB0010", "isNumber": true},
+        { "key": "号牌种类", "value": "小型车", "isNumber": true},
+        { "key": "号牌颜色", "value": "蓝色", "isNumber": true},
+        { "key": "车身颜色", "value": "白色", "isNumber": true},
+        { "key": "车辆品牌", "value": "比亚迪", "isNumber": true},
+        { "key": "车辆类型", "value": "小型车", "isNumber": true},
+        { "key": "使用性质", "value": "个人", "isNumber": true},
+        { "key": "车辆状态", "value": "正常", "isNumber": true}
+      ]
+    },
+    {
+      "id": 17,
+      "name": "2020-05-05 闯红灯",
+      "label": "2020-05-05 闯红灯",
+      "group": 6,
+      "nodeType": "违法",
+      "runtime": 20,
+      "detail": [
+        { "key": "违法时间", "value": "2017-09-18 10:32:00", "isNum": true },
+        { "key": "违法类型", "value": "闯红灯", "isNum": false },
+        { "key": "行政区划", "value": "闵行区", "isNum": false },
+        {
+          "key": "违法地址",
+          "value": "上海市徐汇区钦州北路西南路口",
+          "isNum": false
+        },
+        {
+          "key": "处理部门",
+          "value": "上海市公安局交通警察总队高架道路支队四大队",
+          "isNum": false
+        },
+        { "key": "处理时间", "value": "2017-09-18 10:32:00", "isNum": true }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "2020-05-05 闯红灯",
+      "label": "2020-05-05 闯红灯",
+      "group": 7,
+      "nodeType": "违法",
+      "runtime": 10,
+      "detail": [
+        { "key": "违法时间", "value": "2017-09-18 10:32:00", "isNum": true },
+        { "key": "违法类型", "value": "闯红灯", "isNum": false },
+        { "key": "行政区划", "value": "闵行区", "isNum": false },
+        {
+          "key": "违法地址",
+          "value": "上海市徐汇区钦州北路西南路口",
+          "isNum": false
+        },
+        {
+          "key": "处理部门",
+          "value": "上海市公安局交通警察总队高架道路支队四大队",
+          "isNum": false
+        },
+        { "key": "处理时间", "value": "2017-09-18 10:32:00", "isNum": true }
+      ]
+    }
+  ],
+  "rel": [
+    { "startNode": 1, "endNode": 2, "type": "违法" },
+    { "startNode": 1, "endNode": 3, "type": "违法" },
+    { "startNode": 1, "endNode": 4, "type": "车主" },
+    { "startNode": 1, "endNode": 5, "type": "违法" },
+    { "startNode": 1, "endNode": 6, "type": "警情" },
+    { "startNode": 1, "endNode": 7, "type": "事故" },
+    { "startNode": 1, "endNode": 8, "type": "事故" },
+    { "startNode": 2, "endNode": 9, "type": "违法" },
+    { "startNode": 4, "endNode": 3, "type": "违法" },
+    { "startNode": 4, "endNode": 5, "type": "违法" },
+    { "startNode": 10, "endNode": 4, "type": "车主" },
+    { "startNode": 11, "endNode": 7, "type": "事故" },
+    { "startNode": 11, "endNode": 12, "type": "警情" },
+    { "startNode": 13, "endNode": 11, "type": "车主" },
+    { "startNode": 11, "endNode": 14, "type": "违法" },
+    { "startNode": 15, "endNode": 14, "type": "违法" },
+    { "startNode": 15, "endNode": 16, "type": "车主" },
+    { "startNode": 15, "endNode": 17, "type": "违法" },
+    { "startNode": 16, "endNode": 17, "type": "违法" },
+    { "startNode": 16, "endNode": 18, "type": "违法" }
+  ]
+}

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import * as d3 from 'd3';
 import MapBtn from "./map-btn";
+import forceBoundary from 'd3-force-boundary';
 import './index.css';
 import axios from 'axios';
 
@@ -44,6 +45,7 @@ export default function Mapping() {
     const vehicleMap = useRef(null);
     useEffect(() => {
         axios.get('./data-vehicle.json').then(r => {
+        // axios.get('./data-vehicle-20230223.json').then(r => {
             r.data.rel.forEach(item => {
                 item.source = item.startNode;
                 item.target = item.endNode;
@@ -72,22 +74,25 @@ export default function Mapping() {
     function initGraph(data, flag = false) {
         const width =  vehicleMap.current.offsetWidth;
         const height =  vehicleMap.current.offsetHeight;
+        console.log(width, height)
         if (flag && simulationD3) {
             simulationD3.stop()
             d3.select('#fd').selectAll('svg').remove();
         }
         const simulation = d3.forceSimulation()
-            // .force('boundary', forceBoundary(0, 0, 860, 700))
-            .force("link", d3.forceLink() // This force provides links between nodes
+            // .force('boundary', forceBoundary(0, 0, width, height))
+            .force("link", 
+                d3.forceLink() // This force provides links between nodes
                 .id(d => d.id) // This sets the node id accessor to the specified function. If not specified, will default to the index of a node.
-                .distance(160)
+                .distance(260)
             )
-            .force("charge", d3.forceManyBody().strength(-500)); // This adds repulsion (if it's negative) between nodes. 
+            .force("charge", d3.forceManyBody().strength(-160)) // This adds repulsion (if it's negative) between nodes. 
+            // .force('center', d3.forceCenter(width/2, height/2));
         setSimulation(simulation);
         const svg = d3.select("#fd")
             .append("svg")
             .attr("class", "wc-svg")
-            .attr('viewBox', '0 0 1283 700')
+            .attr('viewBox', `0 0 ${width} ${height}`)
             .attr('width', '100%')
             .attr('height', '100%');
         const g = svg.append("g");
@@ -100,112 +105,85 @@ export default function Mapping() {
 
         /* 画箭头 */
         g.append('defs').append('marker')
-            .attr("id", 'arrowhead')
-            .attr('viewBox', '-0 -5 10 10') // the bound of the SVG viewport for the current SVG fragment. defines a coordinate system 10 wide and 10 high starting on (0,-5)
-            .attr('refX', 23) // x coordinate for the reference point of the marker. If circle is bigger, this need to be bigger.
+            .attr("id", 'arrowhead-车主')
+            .attr('viewBox', '-0 -12 16 24') // the bound of the SVG viewport for the current SVG fragment. defines a coordinate system 10 wide and 10 high starting on (0,-5)
+            .attr('refX', -24) // x coordinate for the reference point of the marker. If circle is bigger, this need to be bigger.
             .attr('refY', 0)
             .attr('orient', 'auto')
-            .attr('markerWidth', 8)
-            .attr('markerHeight', 8)
+            .attr('markerWidth', 11)
+            .attr('markerHeight', 11)
             .attr('xoverflow', 'visible')
             .attr('markerUnits', 'strokeWidth')
             .append('svg:path')
-            .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
-            .attr('fill', '#999')
+            .attr('d', 'M0 -12 L16 0 L0 12 Q16 0 0 -12')
+            .attr('fill', '#06C270')
             .style('stroke', 'none');
-        g.append('defs').append('marker')
-            .attr("id", 'arrowheadBigger')
-            .attr('viewBox', '-0 -5 10 10') // the bound of the SVG viewport for the current SVG fragment. defines a coordinate system 10 wide and 10 high starting on (0,-5)
-            .attr('refX', 32) // x coordinate for the reference point of the marker. If circle is bigger, this need to be bigger.
-            .attr('refY', 0)
-            .attr('orient', 'auto')
-            .attr('markerWidth', 8)
-            .attr('markerHeight', 8)
-            .attr('xoverflow', 'visible')
-            .attr('markerUnits', 'strokeWidth')
-            .append('svg:path')
-            .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
-            .attr('fill', '#999')
-            .style('stroke', 'none');
+        Object.keys(nodeColor).forEach(i => {
+            if (i!== '车主') {
+                g.select('marker').clone(true)
+                    .attr("id", 'arrowhead-' + i)
+                    .select('path')
+                    .attr('fill', nodeColor[i])
+            }
+        })
 
         let centerNodeTemp;
         if (!centerNode) {
-            centerNodeTemp = data.node.filter(item => item.name === id)[0];;
+            centerNodeTemp = data.node.filter(item => item.name === id)[0];
             setCenterNode(centerNodeTemp); /* 中心节点 */
         } else {
             centerNodeTemp = centerNode;
         }
 
         // 节点间的连接线&拼接上箭头
-        const links = g.selectAll(".links")
+        const linksP = g.append('g').attr('class', 'links-all').selectAll(".links")
             .data(data.rel)
             .enter()
-            .append("line")
+            .append('g')
+
+        const links = linksP.append("polyline")
             .attr("class", "links")
-            .attr('marker-end', 
+            .attr('marker-mid', 
                 d => {
-                    if (d.target === centerNodeTemp.id) {
-                        return 'url(#arrowheadBigger)'
-                    } else {
-                        return 'url(#arrowhead)'
-                    }
+                    return `url(#arrowhead-${d.type})`
                 }
             );
+        
+        const textRect = linksP
+            .append('rect')
+            .attr('width', 50)
+            .attr('height', 25)
+            .attr('rx', 12.5)
+            .attr('fill', d => nodeColor[d.type])
 
-        const edgepaths = g.selectAll(".edgepath") // make path go along with the link provide position for link labels
-            .data(data.rel)
-            .enter()
-            .append('path')
-            .attr('class', 'edgepath')
-            .attr('fill-opacity', 0)
-            .attr('stroke-opacity', 0)
-            .attr('id', function (d, i) { return 'edgepath' + (d.source.id || d.source) + '-' + (d.target.id || d.target)})
-            .style("pointer-events", "none");
-
-        const edgelabels = g.selectAll(".edgelabel")
-            .data(data.rel)
-            .enter()
+        const edgelabels = linksP
             .append('text')
             .style("pointer-events", "none")
             .attr('class', 'edgelabel')
-            .attr('id', function (d, i) { return 'edgelabel' + (d.source.id || d.source) + '-' + (d.target.id || d.target)})
             .attr('font-size', 10)
-            .attr('fill', '#aaa');
-
-        /* 连接线中间的文字 */
-        edgelabels.append('textPath') // To render text along the shape of a <path>, enclose the text in a <textPath> element that has an href attribute with a reference to the <path> element.
-            .attr('xlink:href', function (d, i) { return '#edgepath' + (d.source.id || d.source) + '-' + (d.target.id || d.target)})
-            .style("text-anchor", "middle")
-            .style("pointer-events", "none")
-            .attr("startOffset", "50%")
-            // .attr('filter', 'url(#rounded-corners)')
-            .text(d => d.type);
+            .attr("text-anchor", 'middle')
+            .attr('fill', '#aaa').text(d => d.type);
 
         // Initialize the nodes
-        const nodes = g.selectAll(".nodes")
+        const nodes = g.append('g').attr('class', 'nodes-all').selectAll(".nodes")
             .data(data.node)
             .enter()
             .append("g")
             .attr("class", "nodes")
             .call(drag(simulation)); 
 
-            nodes.append("circle")
-                .attr("r", d => {
-                    if (d.id === centerNodeTemp.id) {
-                        return 30
-                    }
-                    return 13;
-                })
-                .style("stroke", "#fff")
-                // .style("stroke-opacity", 0.3)
-                .style("stroke-width", d => {
-                    if (d.id === centerNodeTemp.id) {
-                        return 10
-                    }
-                    return 14;
-                })
-                .attr('class', 'wc-node-circle')
-                .style("fill", d => nodeColor[d.nodeType]);
+        nodes.append("circle")
+            .attr("r", d => d.id === centerNodeTemp.id ? 30 : 13)
+            .style("stroke", "#fff")
+            .style("stroke-width", d => d.id === centerNodeTemp.id ? 10 : 14)
+            .attr('class', 'wc-node-circle')
+            .style("fill", d => nodeColor[d.nodeType]);
+        
+        nodes.append("text")
+            .attr("dy", d => d.id === centerNodeTemp.id ? 52 : 36)
+            .attr("text-anchor", 'middle')
+            .text(d => d.name)
+            .style('fill', '#ffffff');
         
         /* 监听节点点击事件 */
         nodes.selectAll('circle').on('click', (d) => {
@@ -234,39 +212,21 @@ export default function Mapping() {
             setIsActive(item.isActive);
         });
 
-        nodes.append("text")
-            .attr("dy", d => {
-                if (d.id === centerNodeTemp.id) {
-                    return 52;
-                }
-                return 36;
-            })
-            .attr("dx", -15)
-            .text(d => d.name)
-            .style('fill', '#ffffff');
-
         // Listen for tick events to render the nodes as they update in your Canvas or SVG.
         simulation
             .nodes(data.node)
-            .on("tick", () => ticked(links, nodes, edgepaths, width, height));
+            .on("tick", () => ticked(links, nodes, edgelabels, textRect, width, height));
 
         simulation.force("link")
             .links(data.rel);
 
     }
-    function ticked(links, nodes, edgepaths, width, height) {
+    function ticked(links, nodes, edgelabels, textRect, width, height) {
         links.attr("x1", d => d.source.x)
             .attr("y1", d => d.source.y)
             .attr("x2", d => d.target.x)
             .attr("y2", d => d.target.y);
-        nodes.attr("transform", d => `translate(${d.x},${d.y})`);
-        edgepaths.attr('d', d => {
-            if (d.source.x<d.target.x) {
-                return 'M ' + d.source.x + ' ' + d.source.y + ' L ' + d.target.x + ' ' + d.target.y
-            } else {
-                return 'M ' + d.target.x + ' ' + d.target.y + ' L ' + d.source.x + ' ' + d.source.y
-            }
-        });
+        links.attr('points', d => `${d.source.x},${d.source.y}  ${(d.source.x+d.target.x)/2},${(d.source.y + d.target.y)/2} ${d.target.x},${d.target.y} `)
         nodes.attr("transform", d => {
             if (isCenterNode(d)) {
                 if (!d.f && !d.fy) { /* 初次渲染给中心节点指定位置 */
@@ -276,7 +236,18 @@ export default function Mapping() {
             }
             return `translate(${d.x},${d.y})`}
         );
-
+        textRect
+        .attr('x', function (d) { return (d.source.x + d.target.x) / 2 - 25 })
+        .attr('y', function (d) { return (d.source.y + d.target.y) / 2 - 12.5 })
+        .attr('transform', d => {
+            return `rotate(${angel(d.source, d.target)} ${(d.source.x + d.target.x) / 2} ${(d.source.y + d.target.y) / 2})`
+        })
+        edgelabels
+        .attr('x', function (d) { return (d.source.x + d.target.x) / 2 })
+        .attr('y', function (d) { return (d.source.y + d.target.y) / 2 + 5 })
+        .attr('transform', d => {
+            return `rotate(${angel(d.source, d.target)} ${(d.source.x + d.target.x) / 2} ${(d.source.y + d.target.y) / 2})`
+        })
     }
 
     /* 判断是否是中心节点 */
@@ -286,7 +257,7 @@ export default function Mapping() {
 
     function drag(simulation) {
         function dragstarted(event) {
-            if (!event.active) simulation.alphaTarget(0.3).restart(); /* 设置衰减系数，对节点位置移动过程的模拟，数值越高移动越快，数值范围（0， 1） */
+            if (!event.active) simulation.alphaTarget(1).restart(); /* 设置衰减系数，对节点位置移动过程的模拟，数值越高移动越快，数值范围（0， 1） */
             event.subject.fx = event.subject.x;
             event.subject.fy = event.subject.y;
         }
@@ -299,7 +270,6 @@ export default function Mapping() {
         return d3.drag()
             .on("start", dragstarted)
             .on("drag", dragged)
-        // .on("end", dragended);
     }
     /* 
     显示或隐藏节点，隐藏规则
@@ -436,6 +406,15 @@ export default function Mapping() {
             return true;
         }
     }
+
+
+    function angel(start, end) {
+        var diff_x = end.x - start.x,
+            diff_y = end.y - start.y;
+        //返回角度,不是弧度
+        return 360*Math.atan(diff_y/diff_x)/(2*Math.PI);
+    }
+
 
     return (
             <div className={`${prefix}`} style={{ height: '100%'}} ref={vehicleMap}>

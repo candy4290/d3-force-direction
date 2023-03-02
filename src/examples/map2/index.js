@@ -187,7 +187,22 @@ export default function Mapping() {
                 }
             })
 
-        /* 监听图片节点点击事件 */
+        listenImgEvent();
+
+        // Listen for tick events to render the nodes as they update in your Canvas or SVG. 力导图布局
+        simulationD3Ref.current
+            .nodes(mapDataRef.current.nodes)
+            .on("tick", () => ticked(width, height));
+
+        simulationD3Ref.current.force("link")
+            .links(mapDataRef.current.links);
+
+    }
+
+    /* 监听图片节点点击事件 */
+    function listenImgEvent() {
+        const width = deviceMap.current.offsetWidth;
+        const height = deviceMap.current.offsetHeight;
         mapSvgDataRef.current.svg_nodes.selectAll('.img-node').on('click', (d) => {
             d3.select(".kz-device-mapping-tooltip").attr('style', `display:none;`);
             const item = d.srcElement.__data__;
@@ -230,15 +245,8 @@ export default function Mapping() {
                 d3.select(".kz-device-mapping-tooltip").attr('style', `display:none;`);
             }
         });
-        // Listen for tick events to render the nodes as they update in your Canvas or SVG. 力导图布局
-        simulationD3Ref.current
-            .nodes(mapDataRef.current.nodes)
-            .on("tick", () => ticked(width, height));
-
-        simulationD3Ref.current.force("link")
-            .links(mapDataRef.current.links);
-
     }
+
     function ticked(width, height) {
         mapSvgDataRef.current.svg_links.attr("x1", d => {
             return d.source.x;
@@ -482,6 +490,8 @@ export default function Mapping() {
             .attr('style', 'stroke:#cccccc;stroke-width:1px;')
             .attr('marker-end', 'url(#arrowhead)')
             .merge(mapSvgDataRef.current.svg_links);
+
+            listenImgEvent();
 
             simulationD3Ref.current.nodes(mapDataRef.current.nodes);
             simulationD3Ref.current.force('link').links(mapDataRef.current.links);

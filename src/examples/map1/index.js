@@ -81,13 +81,16 @@ export default function Mapping() {
         }
         const simulation = d3.forceSimulation()
             // .force('boundary', forceBoundary(0, 0, width, height))
+            .force("charge", d3.forceManyBody().distanceMax(260).strength(-160))
             .force("link", 
                 d3.forceLink() // This force provides links between nodes
                 .id(d => d.id) // This sets the node id accessor to the specified function. If not specified, will default to the index of a node.
                 .distance(260)
+                .strength(1)
             )
-            .force("charge", d3.forceManyBody().strength(-160)) // This adds repulsion (if it's negative) between nodes. 
+            .force('collision', d3.forceCollide().radius(30)) /* 节点碰撞力;根据节点层级来；层级越大力越小 */
             // .force('center', d3.forceCenter(width/2, height/2));
+            
         setSimulation(simulation);
         const svg = d3.select("#fd")
             .append("svg")
@@ -270,6 +273,13 @@ export default function Mapping() {
         return d3.drag()
             .on("start", dragstarted)
             .on("drag", dragged)
+            .on('end',  event => {
+                !event.active && simulation.alphaTarget(0);
+                if (!isCenterNode(event.subject)) {
+                    event.subject.fx = null;
+                    event.subject.fy = null;
+                }
+              });
     }
     /* 
     显示或隐藏节点，隐藏规则
